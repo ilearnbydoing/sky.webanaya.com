@@ -3,6 +3,7 @@ $name = $_POST["name"];
 $email = $_POST["email"];
 $phone = $_POST["phone"];
 $aahar = $_POST["aahar"];
+
 $company = $_POST["company"];
 
 $EmailTo = "skyenterprisesindia@gmail.com,info@hnhtwenty.com,durgesh@webanaya.com";
@@ -23,7 +24,7 @@ $Body .= "Phone: ";
 $Body .= $phone;
 $Body .= "\n";
 
-$Body .= "Aahar: ";
+$Body .= "Aahar Visit Date: ";
 $Body .= $aahar;
 $Body .= "\n";
 

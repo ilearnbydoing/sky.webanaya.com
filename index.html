@@ -96,11 +96,13 @@ HEADER
 						              <input type="text" class="form-control" id="phone" name="phone" placeholder="Your contact no." required="">
 						            </div>
 												<div class="form-group">
-		 <select id="aahar" class="form-control">
-			 <option selected>Choose AAHAR Visit Date</option>
+		 <select id="aahar" name="aahar" class="form-control">
+			 <option selected value="Visit Date">Choose AAHAR Visit Date</option>
 			 <option value="12th March 2019">12th March 2019</option>
 			 <option value="13th March 2019">13th March 2019</option>
 			 <option value="14th March 2019">14th March 2019</option>
+			 <option value="15th March 2019">15th March 2019</option>
+			 <option value="16th March 2019">16th March 2019</option>
 		 </select>
 	 </div>
 						            <div class="form-group">
@@ -279,17 +281,18 @@ function submitForm(){
     var name = $("#name").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
-		var aahar = $("#aahar").val()
+    var aahar = $("#aahar").val();
     var company = $("#company").val();
 
 
     $.ajax({
         type: "POST",
         url: "form-process.php",
-        data: "name=" + name + "&phone=" + phone + "&email=" + email + "&aahar" + aahar + "&company=" + company,
+        data: "name=" + name + "&phone=" + phone + "&email=" + email + "&aahar=" + aahar + "&company=" + company,
         success : function(text){
             if (text == "success"){
                 formSuccess();
+								//alert(aahar);
             } else {
                 formError();
                 submitMSG(false,text);
